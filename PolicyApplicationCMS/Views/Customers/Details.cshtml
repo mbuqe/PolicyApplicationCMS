@@ -1,0 +1,91 @@
+﻿@model PolicyApplicationCMS.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Quotation.CoverAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quotation.CoverAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C_Surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C_Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C_Cellphone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_Cellphone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C_Contact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_Contact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C_Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C_Marital_Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_Marital_Status)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.C_IDNumber }) |
+    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Apply", "Create", "Applies")
+</p>

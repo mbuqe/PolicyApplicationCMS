@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F92C999D-5AAD-4C8F-9253-225E098D714F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PolicyApplicationCMS</RootNamespace>
+    <AssemblyName>PolicyApplicationCMS</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44311</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AppliesController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\QuotationsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106251232596_InitialCreate.cs" />
+    <Compile Include="Migrations\202106251232596_InitialCreate.designer.cs">
+      <DependentUpon>202106251232596_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\databasGeneratedAttribute.cs" />
+    <Compile Include="Models\InsuranceContext.cs" />
+    <Compile Include="Models\Quotation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="MyStyle\dummy\bbs-logo%402x.png" />
+    <Content Include="MyStyle\dummy\bbs-logo.png" />
+    <Content Include="MyStyle\dummy\featured-image-1%402x.jpg" />
+    <Content Include="MyStyle\dummy\featured-image-1.jpg" />
+    <Content Include="MyStyle\dummy\featured-image-2%402x.jpg" />
+    <Content Include="MyStyle\dummy\featured-image-2.jpg" />
+    <Content Include="MyStyle\dummy\featured-image-3%402x.jpg" />
+    <Content Include="MyStyle\dummy\featured-image-3.jpg" />
+    <Content Include="MyStyle\dummy\forbes-logo%402x.png" />
+    <Content Include="MyStyle\dummy\forbes-logo.png" />
+    <Content Include="MyStyle\dummy\money-logo%402x.png" />
+    <Content Include="MyStyle\dummy\money-logo.png" />
+    <Content Include="MyStyle\dummy\nyt-logo%402x.png" />
+    <Content Include="MyStyle\dummy\nyt-logo.png" />
+    <Content Include="MyStyle\dummy\offer-1%402x.jpg" />
+    <Content Include="MyStyle\dummy\offer-1.jpg" />
+    <Content Include="MyStyle\dummy\offer-2%402x.jpg" />
+    <Content Include="MyStyle\dummy\offer-2.jpg" />
+    <Content Include="MyStyle\dummy\offer-3%402x.jpg" />
+    <Content Include="MyStyle\dummy\offer-3.jpg" />
+    <Content Include="MyStyle\dummy\offer-4%402x.jpg" />
+    <Content Include="MyStyle\dummy\offer-4.jpg" />
+    <Content Include="MyStyle\dummy\offer-tall%402x.jpg" />
+    <Content Include="MyStyle\dummy\offer-tall.jpg" />
+    <Content Include="MyStyle\dummy\offer-wide%402x.jpg" />
+    <Content Include="MyStyle\dummy\offer-wide.jpg" />
+    <Content Include="MyStyle\dummy\slide-1%402x.jpg" />
+    <Content Include="MyStyle\dummy\slide-1.jpg" />
+    <Content Include="MyStyle\dummy\slide-2%402x.jpg" />
+    <Content Include="MyStyle\dummy\slide-2.jpg" />
+    <Content Include="MyStyle\dummy\slide-3%402x.jpg" />
+    <Content Include="MyStyle\dummy\slide-3.jpg" />
+    <Content Include="MyStyle\dummy\team-1%402x.jpg" />
+    <Content Include="MyStyle\dummy\team-1.jpg" />
+    <Content Include="MyStyle\dummy\team-2%402x.jpg" />
+    <Content Include="MyStyle\dummy\team-2.jpg" />
+    <Content Include="MyStyle\dummy\team-3%402x.jpg" />
+    <Content Include="MyStyle\dummy\team-3.jpg" />
+    <Content Include="MyStyle\dummy\team-4%402x.jpg" />
+    <Content Include="MyStyle\dummy\team-4.jpg" />
+    <Content Include="MyStyle\dummy\wsj-logo%402x.png" />
+    <Content Include="MyStyle\dummy\wsj-logo.png" />
+    <Content Include="MyStyle\fonts\font-awesome.min.css" />
+    <Content Include="MyStyle\fonts\fontawesome-webfont.svg" />
+    <Content Include="MyStyle\fonts\lineo-icon\demo-files\demo.css" />
+    <Content Include="MyStyle\fonts\lineo-icon\demo-files\demo.js" />
+    <Content Include="MyStyle\fonts\lineo-icon\demo.html" />
+    <Content Include="MyStyle\fonts\lineo-icon\fonts\icomoon.svg" />
+    <Content Include="MyStyle\fonts\lineo-icon\Read Me.txt" />
+    <Content Include="MyStyle\fonts\lineo-icon\style.css" />
+    <Content Include="MyStyle\images\arrow%402x.png" />
+    <Content Include="MyStyle\images\arrow-blue%402x.png" />
+    <Content Include="MyStyle\images\arrow-blue.png" />
+    <Content Include="MyStyle\images\arrow.png" />
+    <Content Include="MyStyle\images\dotted%402x.png" />
+    <Content Include="MyStyle\images\dotted.png" />
+    <Content Include="MyStyle\images\icon-calendar%402x.png" />
+    <Content Include="MyStyle\images\icon-calendar.png" />
+    <Content Include="MyStyle\images\icon-phone%402x.png" />
+    <Content Include="MyStyle\images\icon-phone.png" />
+    <Content Include="MyStyle\images\icon-search%402x.png" />
+    <Content Include="MyStyle\images\icon-search.png" />
+    <Content Include="MyStyle\images\logo%402x.png" />
+    <Content Include="MyStyle\images\logo.png" />
+    <Content Include="MyStyle\js\app.js" />
+    <Content Include="MyStyle\js\ie-support\html5.js" />
+    <Content Include="MyStyle\js\ie-support\pie.htc" />
+    <Content Include="MyStyle\js\ie-support\respond.js" />
+    <Content Include="MyStyle\js\jquery-1.11.1.min.js" />
+    <Content Include="MyStyle\js\min\app-min.js" />
+    <Content Include="MyStyle\js\min\plugins-min.js" />
+    <Content Include="MyStyle\js\plugins.js" />
+    <Content Include="MyStyle\style.css" />
+    <Content Include="MyStyle\__MACOSX\._about.html" />
+    <Content Include="MyStyle\__MACOSX\._contact.html" />
+    <Content Include="MyStyle\__MACOSX\._index.html" />
+    <Content Include="MyStyle\__MACOSX\._insurance.html" />
+    <Content Include="MyStyle\__MACOSX\._resource.html" />
+    <Content Include="MyStyle\__MACOSX\._style.css" />
+    <Content Include="MyStyle\__MACOSX\dummy\._bbs-logo%402x.png" />
+    <Content Include="MyStyle\__MACOSX\dummy\._bbs-logo.png" />
+    <Content Include="MyStyle\__MACOSX\dummy\._featured-image-1%402x.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._featured-image-1.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._featured-image-2%402x.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._featured-image-2.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._featured-image-3%402x.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._featured-image-3.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._forbes-logo%402x.png" />
+    <Content Include="MyStyle\__MACOSX\dummy\._forbes-logo.png" />
+    <Content Include="MyStyle\__MACOSX\dummy\._money-logo%402x.png" />
+    <Content Include="MyStyle\__MACOSX\dummy\._money-logo.png" />
+    <Content Include="MyStyle\__MACOSX\dummy\._nyt-logo%402x.png" />
+    <Content Include="MyStyle\__MACOSX\dummy\._nyt-logo.png" />
+    <Content Include="MyStyle\__MACOSX\dummy\._offer-1%402x.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._offer-1.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._offer-2%402x.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._offer-2.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._offer-3%402x.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._offer-3.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._offer-4%402x.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._offer-4.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._offer-tall%402x.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._offer-tall.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._offer-wide%402x.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._offer-wide.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._slide-1%402x.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._slide-1.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._slide-2%402x.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._slide-2.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._slide-3%402x.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._slide-3.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._team-1%402x.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._team-1.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._team-2%402x.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._team-2.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._team-3%402x.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._team-3.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._team-4%402x.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._team-4.jpg" />
+    <Content Include="MyStyle\__MACOSX\dummy\._wsj-logo%402x.png" />
+    <Content Include="MyStyle\__MACOSX\dummy\._wsj-logo.png" />
+    <Content Include="MyStyle\__MACOSX\fonts\._font-awesome.min.css" />
+    <Content Include="MyStyle\__MACOSX\fonts\._fontawesome-webfont.svg" />
+    <Content Include="MyStyle\__MACOSX\fonts\lineo-icon\._demo.html" />
+    <Content Include="MyStyle\__MACOSX\fonts\lineo-icon\._Read Me.txt" />
+    <Content Include="MyStyle\__MACOSX\fonts\lineo-icon\._style.css" />
+    <Content Include="MyStyle\__MACOSX\fonts\lineo-icon\demo-files\._demo.css" />
+    <Content Include="MyStyle\__MACOSX\fonts\lineo-icon\demo-files\._demo.js" />
+    <Content Include="MyStyle\__MACOSX\fonts\lineo-icon\fonts\._icomoon.svg" />
+    <Content Include="MyStyle\__MACOSX\images\._arrow%402x.png" />
+    <Content Include="MyStyle\__MACOSX\images\._arrow-blue%402x.png" />
+    <Content Include="MyStyle\__MACOSX\images\._arrow-blue.png" />
+    <Content Include="MyStyle\__MACOSX\images\._arrow.png" />
+    <Content Include="MyStyle\__MACOSX\images\._dotted%402x.png" />
+    <Content Include="MyStyle\__MACOSX\images\._dotted.png" />
+    <Content Include="MyStyle\__MACOSX\images\._icon-calendar%402x.png" />
+    <Content Include="MyStyle\__MACOSX\images\._icon-calendar.png" />
+    <Content Include="MyStyle\__MACOSX\images\._icon-phone%402x.png" />
+    <Content Include="MyStyle\__MACOSX\images\._icon-phone.png" />
+    <Content Include="MyStyle\__MACOSX\images\._icon-search%402x.png" />
+    <Content Include="MyStyle\__MACOSX\images\._icon-search.png" />
+    <Content Include="MyStyle\__MACOSX\images\._logo%402x.png" />
+    <Content Include="MyStyle\__MACOSX\images\._logo.png" />
+    <Content Include="MyStyle\__MACOSX\js\._app.js" />
+    <Content Include="MyStyle\__MACOSX\js\._jquery-1.11.1.min.js" />
+    <Content Include="MyStyle\__MACOSX\js\._plugins.js" />
+    <Content Include="MyStyle\__MACOSX\js\ie-support\._html5.js" />
+    <Content Include="MyStyle\__MACOSX\js\ie-support\._pie.htc" />
+    <Content Include="MyStyle\__MACOSX\js\ie-support\._respond.js" />
+    <Content Include="MyStyle\__MACOSX\js\min\._app-min.js" />
+    <Content Include="MyStyle\__MACOSX\js\min\._plugins-min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="MyStyle\fonts\fontawesome-webfont.eot" />
+    <Content Include="MyStyle\fonts\fontawesome-webfont.ttf" />
+    <Content Include="MyStyle\fonts\fontawesome-webfont.woff" />
+    <Content Include="MyStyle\fonts\FontAwesome.otf" />
+    <Content Include="MyStyle\fonts\lineo-icon\fonts\icomoon.eot" />
+    <Content Include="MyStyle\fonts\lineo-icon\fonts\icomoon.ttf" />
+    <Content Include="MyStyle\fonts\lineo-icon\fonts\icomoon.woff" />
+    <Content Include="MyStyle\fonts\lineo-icon\selection.json" />
+    <Content Include="MyStyle\js\jquery-1.11.1.min.map" />
+    <Content Include="MyStyle\sass\layout\_content.scss" />
+    <Content Include="MyStyle\sass\layout\_footer.scss" />
+    <Content Include="MyStyle\sass\layout\_header.scss" />
+    <Content Include="MyStyle\sass\libs\bootstrap-grid\_grid.scss" />
+    <Content Include="MyStyle\sass\libs\bootstrap-grid\_mixins.scss" />
+    <Content Include="MyStyle\sass\libs\bootstrap-grid\_settings.scss" />
+    <Content Include="MyStyle\sass\libs\_components.scss" />
+    <Content Include="MyStyle\sass\libs\_global.scss" />
+    <Content Include="MyStyle\sass\libs\_mixins.scss" />
+    <Content Include="MyStyle\sass\libs\_normalize.scss" />
+    <Content Include="MyStyle\sass\libs\_settings.scss" />
+    <Content Include="MyStyle\sass\style.scss" />
+    <Content Include="MyStyle\__MACOSX\._dummy" />
+    <Content Include="MyStyle\__MACOSX\._fonts" />
+    <Content Include="MyStyle\__MACOSX\._images" />
+    <Content Include="MyStyle\__MACOSX\._js" />
+    <Content Include="MyStyle\__MACOSX\._sass" />
+    <Content Include="MyStyle\__MACOSX\fonts\._fontawesome-webfont.eot" />
+    <Content Include="MyStyle\__MACOSX\fonts\._fontawesome-webfont.ttf" />
+    <Content Include="MyStyle\__MACOSX\fonts\._fontawesome-webfont.woff" />
+    <Content Include="MyStyle\__MACOSX\fonts\._FontAwesome.otf" />
+    <Content Include="MyStyle\__MACOSX\fonts\._lineo-icon" />
+    <Content Include="MyStyle\__MACOSX\fonts\lineo-icon\._demo-files" />
+    <Content Include="MyStyle\__MACOSX\fonts\lineo-icon\._fonts" />
+    <Content Include="MyStyle\__MACOSX\fonts\lineo-icon\._selection.json" />
+    <Content Include="MyStyle\__MACOSX\fonts\lineo-icon\fonts\._icomoon.eot" />
+    <Content Include="MyStyle\__MACOSX\fonts\lineo-icon\fonts\._icomoon.ttf" />
+    <Content Include="MyStyle\__MACOSX\fonts\lineo-icon\fonts\._icomoon.woff" />
+    <Content Include="MyStyle\__MACOSX\js\._ie-support" />
+    <Content Include="MyStyle\__MACOSX\js\._jquery-1.11.1.min.map" />
+    <Content Include="MyStyle\__MACOSX\js\._min" />
+    <Content Include="MyStyle\__MACOSX\sass\._layout" />
+    <Content Include="MyStyle\__MACOSX\sass\._libs" />
+    <Content Include="MyStyle\__MACOSX\sass\._pages" />
+    <Content Include="MyStyle\__MACOSX\sass\._style.scss" />
+    <Content Include="MyStyle\__MACOSX\sass\layout\.__content.scss" />
+    <Content Include="MyStyle\__MACOSX\sass\layout\.__footer.scss" />
+    <Content Include="MyStyle\__MACOSX\sass\layout\.__header.scss" />
+    <Content Include="MyStyle\__MACOSX\sass\libs\._bootstrap-grid" />
+    <Content Include="MyStyle\__MACOSX\sass\libs\.__components.scss" />
+    <Content Include="MyStyle\__MACOSX\sass\libs\.__global.scss" />
+    <Content Include="MyStyle\__MACOSX\sass\libs\.__mixins.scss" />
+    <Content Include="MyStyle\__MACOSX\sass\libs\.__normalize.scss" />
+    <Content Include="MyStyle\__MACOSX\sass\libs\.__settings.scss" />
+    <Content Include="MyStyle\__MACOSX\sass\libs\bootstrap-grid\.__grid.scss" />
+    <Content Include="MyStyle\__MACOSX\sass\libs\bootstrap-grid\.__mixins.scss" />
+    <Content Include="MyStyle\__MACOSX\sass\libs\bootstrap-grid\.__settings.scss" />
+    <None Include="Properties\PublishProfiles\2021grp1301 - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Quotations\Create.cshtml" />
+    <Content Include="Views\Quotations\Delete.cshtml" />
+    <Content Include="Views\Quotations\Details.cshtml" />
+    <Content Include="Views\Quotations\Edit.cshtml" />
+    <Content Include="Views\Quotations\Index.cshtml" />
+    <Content Include="Views\Quotations\Quote.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Applies\Create.cshtml" />
+    <Content Include="Views\Applies\Delete.cshtml" />
+    <Content Include="Views\Applies\Details.cshtml" />
+    <Content Include="Views\Applies\Edit.cshtml" />
+    <Content Include="Views\Applies\Index.cshtml" />
+    <Content Include="Views\Applies\MyProfile.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="MyStyle\sass\pages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202106251232596_InitialCreate.resx">
+      <DependentUpon>202106251232596_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60775</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44311/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

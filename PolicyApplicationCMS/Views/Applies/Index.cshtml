@@ -1,0 +1,67 @@
+﻿@model IEnumerable<PolicyApplicationCMS.Models.Apply>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Quotation.Pre_existing_Conditions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C_IDNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Commencement_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ben_IDNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Application_Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Policy_Status)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quotation.Pre_existing_Conditions)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.C_IDNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Commencement_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ben_IDNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Application_Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Policy_Status)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Policy_Number }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Policy_Number }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Policy_Number })
+            </td>
+        </tr>
+        <div>
+            @Html.ActionLink("My Profile", "Index")
+        </div>
+    }
+
+</table>

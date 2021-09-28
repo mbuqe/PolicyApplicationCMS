@@ -1,0 +1,75 @@
+﻿@model IEnumerable<PolicyApplicationCMS.Models.Quotation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.QuotationID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pre_existing_Conditions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberofDepandents)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SpouseAge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CoverAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Premium)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vat)
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuotationID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pre_existing_Conditions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberofDepandents)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SpouseAge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CoverAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Premium)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vat)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.QuotationID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.QuotationID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.QuotationID })
+        </td>
+    </tr>
+}
+
+</table>

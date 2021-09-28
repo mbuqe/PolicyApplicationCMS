@@ -1,0 +1,103 @@
+﻿@model PolicyApplicationCMS.Models.Quotation
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Quote</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">        
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.QuotationID, htmlAttributes: new { @class = "control-label col-md-2" })          
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Pre_existing_Conditions, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Pre_existing_Conditions, new List<SelectListItem>
+            {
+                new SelectListItem(){Text="Select Condition Applicable", Disabled = true,Selected=true},
+                new SelectListItem(){Text="Healthy"},
+                new SelectListItem(){Text="Cancer"},
+                new SelectListItem(){Text="Diabetes"},
+                new SelectListItem(){Text="Asthma"},
+                new SelectListItem(){Text="Cystic Fibrosis"},
+                new SelectListItem(){Text="Heart Disease"},
+                new SelectListItem(){Text="Alzheimer's"},
+                new SelectListItem(){Text="Kidney Disease"},
+                new SelectListItem(){Text="Epilepsy"},
+                new SelectListItem(){Text="HIV"},
+                new SelectListItem(){Text="Haemophilia"},
+            })
+                @Html.ValidationMessageFor(model => model.Pre_existing_Conditions, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NumberofDepandents, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NumberofDepandents, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NumberofDepandents, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SpouseAge, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SpouseAge, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SpouseAge, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CoverAmount, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.RadioButtonFor(model => model.CoverAmount, 30000)&nbsp; R30 000
+                @Html.RadioButtonFor(model => model.CoverAmount, 50000)&nbsp; R50 000
+                @Html.RadioButtonFor(model => model.CoverAmount, 70000)&nbsp; R70 000
+                @Html.RadioButtonFor(model => model.CoverAmount, 100000)&nbsp; R100 000
+                @Html.ValidationMessageFor(model => model.CoverAmount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Premium, htmlAttributes: new { @class = "control-label col-md-2" })            
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Vat, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+               
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
